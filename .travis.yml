@@ -1,0 +1,14 @@
+env:
+  global:
+  - REPO=d1ablorus/proxybroker
+  - TAG=v0.1
+
+services:
+  - docker
+
+script:
+  - docker build -t $REPO .;
+  - docker tag $REPO:latest $REPO:$TAG;
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - docker push $REPO;
+  - docker push $REPO:$TAG;
