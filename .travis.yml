@@ -1,7 +1,7 @@
 env:
   global:
   - REPO=d1ablorus/proxybroker
-  - TAG=v0.1
+  - TAG=v0.2
 
 services:
   - docker
