@@ -16,10 +16,10 @@ RUN apk add --update \
          maxminddb \
     && pip install -U git+https://github.com/constverum/ProxyBroker.git
 
-COPY proxy_check.sh entrypoint.sh /usr/local/bin/
+COPY proxy_check.sh docker-entrypoint.sh /usr/local/bin/
 
 VOLUME /opt
 
 WORKDIR /opt
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
