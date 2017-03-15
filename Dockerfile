@@ -10,6 +10,7 @@ RUN apk --no-cache add --update \
       gcc \
       musl-dev \
       git \
+      ca-certificates \
     && chmod +x /usr/local/bin/go-proxycheck \
     && pip install \
          aiohttp \
