@@ -1,9 +1,7 @@
 FROM python:alpine
 
-ENV JOBS=100 \
-    SITE=https://m.vk.com
+ENV JOBS=100
 
-ADD https://github.com/D1abloRUS/go-proxycheck/releases/download/latest/go-proxycheck /usr/local/bin/go-proxycheck
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN apk --no-cache add --update \
@@ -12,7 +10,6 @@ RUN apk --no-cache add --update \
       git \
       ca-certificates \
       openssl \
-    && chmod +x /usr/local/bin/go-proxycheck \
     && pip install \
          aiohttp \
          aiodns \
